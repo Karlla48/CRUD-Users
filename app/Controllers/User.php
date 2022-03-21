@@ -47,4 +47,10 @@ class User extends BaseController
             echo "Ocorreu um Erro.";
         }
     }
+
+    public function edit($id){
+        return view('form', [
+            'user' => $this->userModel->find($id)
+        ]);
+    }
 }

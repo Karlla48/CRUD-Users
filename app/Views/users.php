@@ -5,6 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
+    <style> 
+        ul.pagination li {
+            display: inline;
+        }
+
+        ul.pagination li a {
+            color:black;
+            float:left;
+            padding:8px 16px;
+            text-decoration: none;
+        }
+
+        .active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        ul.pagination li a:hover:not(.active){
+            background-color: #ddd;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -29,7 +51,7 @@
                 </tr>
             <?php endforeach; ?>
         </table>
-        
+        <?php echo $pager ->links(); ?>
     </section>
 
 </body>

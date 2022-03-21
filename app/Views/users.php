@@ -27,6 +27,15 @@
         }
 
     </style>
+    <script>
+        function confirma() {
+            if(!confirm('Deseja excluir o registro?')) {
+                return false;
+            }
+            
+            return true;
+        }
+    </script>
 </head>
 
 <body>
@@ -47,7 +56,11 @@
                     <td><?php echo $user['username']?></td>
                     <td><?php echo $user['lastname']?></td>
                     <td><?php echo $user['email']?></td>
-                    <td>Ações</td>
+                    <td>
+                        <?php echo anchor('user/edit/'.$user['id'], 'Editar') ?>
+                        -
+                        <?php echo anchor('user/delete/'.$user['id'], 'Excluir', ['onclick' => 'return confirma()']) ?>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </table>

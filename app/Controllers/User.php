@@ -20,4 +20,16 @@ class User extends BaseController
             'pager' => $this ->userModel->pager
         ]);
     }
+
+    public function delete($id) 
+    {
+        if ($this->userModel->delete($id)) {
+            echo view('messages', [
+                'message' => 'Usuário Excluído com Sucesso!'
+            ]); 
+        }
+        else {
+            echo "Erro";
+        }
+    }
 }

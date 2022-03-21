@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>Users</title>
     <style> 
         ul.pagination li {
@@ -39,8 +40,8 @@
 </head>
 
 <body>
-    <section class="container">
-        <?php echo anchor(base_url('user/create'),'Novo usuário')?>
+    <section class="container mt-5 border 1px">
+    <?php echo anchor(base_url('user/create'),'Novo usuário', ['class' => 'btn btn-success mb-3 ']) ?>  
         <table class="table">
             <tr>
                 <th>ID</th>
@@ -58,9 +59,10 @@
                     <td><?php echo $user['lastname']?></td>
                     <td><?php echo $user['email']?></td>
                     <td>
-                        <?php echo anchor('user/edit/'.$user['id'], 'Editar') ?>
+                    <p class="btn btn-light">
+                        <?php echo anchor('user/edit/'.$user['id'], 'Editar' ) ?>
                         -
-                        <?php echo anchor('user/delete/'.$user['id'], 'Excluir', ['onclick' => 'return confirma()']) ?>
+                        <?php echo anchor('user/delete/'.$user['id'], 'Excluir',['onclick' => 'return confirma()']) ?>
                     </td>
                 </tr>
             <?php endforeach; ?>

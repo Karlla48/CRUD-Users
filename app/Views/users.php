@@ -40,6 +40,7 @@
 
 <body>
     <section class="container">
+        <?php echo anchor(base_url('user/create'),'Novo usuário')?>
         <table class="table">
             <tr>
                 <th>ID</th>

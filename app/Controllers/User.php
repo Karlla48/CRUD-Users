@@ -32,4 +32,19 @@ class User extends BaseController
             echo "Erro";
         }
     }
+
+    public function create() {
+        return view ('form');
+    }
+
+    public function store(){
+        if ($this->userModel->save($this->request->getPost())) {
+            return view('messages', [
+                'message' => 'Usuário Salvo com Sucesso!'
+            ]);
+        }
+        else {
+            echo "Ocorreu um Erro.";
+        }
+    }
 }

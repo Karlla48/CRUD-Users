@@ -13,7 +13,7 @@
     <?php echo form_open('user/store')?>
     <div class= "form-group">
         <label for="username">Username</label>
-        <input type="text" value="<?php echo isset($user['username']) ? $user['username'] :'' ?>" name="username" id="username" class="form-control">
+        <input type="text" value="<?php echo isset($user['username']) ? $user['username'] :'' ?>" name="username" id="username" class="form-control" >
     </div>
     <div class= "form-group">
         <label for="name">Name</label>
@@ -29,6 +29,7 @@
     </div>
     <input type="submit" value="Salvar" class="btn btn-primary">
     <input type="hidden" name="id" value="<?php echo isset($user['id'])? $user['id']:'' ?>" >
+    
     <?php echo form_close();?>
     </div>
     
